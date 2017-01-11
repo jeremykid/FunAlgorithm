@@ -1,5 +1,17 @@
-var firebaseDBgirls = new Firebase('https://vipspa-4c43f.firebaseio.com/girl');
+// var firebaseDBgirls = new Firebase('https://vipspa-4c43f.firebaseio.com');
 // var firebaseDBgirls = new Firebase('https://moviefire.firebaseio.com/movies');
+
+
+var config = {
+    apiKey: "AIzaSyCR0Vdc2jVkhHdqq8Y5XzpqHkt7U3qCTFk",
+    authDomain: "vipspa-4c43f.firebaseapp.com",
+    databaseURL: "https://vipspa-4c43f.firebaseio.com",
+    storageBucket: "vipspa-4c43f.appspot.com",
+    messagingSenderId: "254523757213"
+};
+// var firebase = new Firebase('https://vipspa-4c43f.firebaseio.com');
+
+firebase.initializeApp(config); 
 
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13) { // as the user presses the enter key, we will attempt to save the data
@@ -7,6 +19,7 @@ function saveToList(event) {
         if (girl.length > 0) {
             saveToFB(girl);
         }
+        refresh();
         document.getElementById('girl').value = '';
         return false;
     }
@@ -14,9 +27,10 @@ function saveToList(event) {
  
 function saveToFB(girl) {
     // this will save data to Firebase
-    firebaseDBgirls.push({
+    firebase.database().ref('/girl/').push({
         name: girl
     });
+
 };
  
 function refreshUI(list) {
@@ -61,22 +75,45 @@ function buildEndPoint (key) {
 }
  
 // this will get fired on inital load as well as when ever there is a change in the data
-firebaseDBgirls.on("value", function(snapshot) {
-    console.log(snapshot);
-    var data = snapshot.val();
+// firebaseDBgirls.on("value", function(snapshot) {
+//     var data = snapshot.val();
 
-    var list = [];
-    for (var key in data) {
-        if (data.hasOwnProperty(key)) {
-            name = data[key].name ? data[key].name : '';
-            if (name.trim().length > 0) {
-                list.push({
-                    name: name,
-                    key: key
-                })
+//     var list = [];
+//     for (var key in data) {
+//         if (data.hasOwnProperty(key)) {
+//             name = data[key].name ? data[key].name : '';
+//             if (name.trim().length > 0) {
+//                 list.push({
+//                     name: name,
+//                     key: key
+//                 })
+//             }
+//         }
+//     }
+//     // refresh the UI
+//     refreshUI(list);
+// });
+
+function refresh(){
+    firebase.database().ref('/girl/').once('value').then(function(snapshot) {
+        console.log(snapshot);
+        var data = snapshot.val();
+
+        var list = [];
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                name = data[key].name ? data[key].name : '';
+                if (name.trim().length > 0) {
+                    list.push({
+                        name: name,
+                        key: key
+                    })
+                }
             }
         }
-    }
-    // refresh the UI
-    refreshUI(list);
-});
+        // refresh the UI
+        refreshUI(list);
+    });
+}
+
+refresh();
