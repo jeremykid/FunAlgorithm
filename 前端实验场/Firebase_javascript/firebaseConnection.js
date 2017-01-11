@@ -1,25 +1,28 @@
-var favMovies = new Firebase('https://moviefire.firebaseio.com/movies');
- 
+var firebaseDBgirls = new Firebase('https://vipspa-4c43f.firebaseio.com/girl');
+// var firebaseDBgirls = new Firebase('https://moviefire.firebaseio.com/movies');
+
 function saveToList(event) {
     if (event.which == 13 || event.keyCode == 13) { // as the user presses the enter key, we will attempt to save the data
-        var movieName = document.getElementById('movieName').value.trim();
-        if (movieName.length > 0) {
-            saveToFB(movieName);
+        var girl = document.getElementById('girl').value.trim();
+        if (girl.length > 0) {
+            saveToFB(girl);
         }
-        document.getElementById('movieName').value = '';
+        document.getElementById('girl').value = '';
         return false;
     }
 };
  
-function saveToFB(movieName) {
+function saveToFB(girl) {
     // this will save data to Firebase
-    favMovies.push({
-        name: movieName
+    firebaseDBgirls.push({
+        name: girl
     });
 };
  
 function refreshUI(list) {
     var lis = '';
+    console.log(list);
+
     for (var i = 0; i < list.length; i++) {
         lis += '<li data-key="' + list[i].key + '">' + list[i].name + ' [' + genLinks(list[i].key, list[i].name) + ']</li>';
     };
@@ -54,12 +57,14 @@ function del(key, mvName) {
 }
  
 function buildEndPoint (key) {
-	return new Firebase('https://moviefire.firebaseio.com/movies/' + key);
+	return new Firebase('https://vipspa-4c43f.firebaseio.com/girl' + key);
 }
  
 // this will get fired on inital load as well as when ever there is a change in the data
-favMovies.on("value", function(snapshot) {
+firebaseDBgirls.on("value", function(snapshot) {
+    console.log(snapshot);
     var data = snapshot.val();
+
     var list = [];
     for (var key in data) {
         if (data.hasOwnProperty(key)) {

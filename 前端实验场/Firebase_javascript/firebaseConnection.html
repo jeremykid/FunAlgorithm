@@ -3,19 +3,31 @@
  
 <head>
     <title>Movie Fire</title>
-    <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" type="text/css" href="firebaseConnection.css">
 </head>
  
 <body>
     <h1>Movie Fire</h1>
     <h3>Save all your Favorite Movies here</h3>
     <hr />
-    <input type="text" id="movieName" placeholder="Enter your Favorite Movie Name" onkeypress="return saveToList(event)" />
-    <h4>My Favorite Movies</h4>
+    <input type="text" id="girl" placeholder="Enter your girl's Name" onkeypress="return saveToList(event)" />
+    <h4>Girls</h4>
     <ol id="favMovies">
     </ol>
     <script type='text/javascript' src='https://cdn.firebase.com/js/client/1.0.15/firebase.js'></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="firebaseConnection.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCR0Vdc2jVkhHdqq8Y5XzpqHkt7U3qCTFk",
+        authDomain: "vipspa-4c43f.firebaseapp.com",
+        databaseURL: "https://vipspa-4c43f.firebaseio.com",
+        storageBucket: "vipspa-4c43f.appspot.com",
+        messagingSenderId: "254523757213"
+      };
+      firebase.initializeApp(config); 
+    </script>
 </body>
  
 </html>
