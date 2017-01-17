@@ -21,8 +21,10 @@ def printFile():
 	return 1
 
 def main():
-
+	readFile()
 
 	print returnPrimeArray(15)
+
+	printFile()
 
 main()
