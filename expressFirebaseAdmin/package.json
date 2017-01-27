@@ -1,0 +1,20 @@
+{
+  "name": "firebase-admin-demo",
+  "version": "1.0.0",
+  "description": "'A simple demo for applying Firebase Node.js Admin SDK'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ji Yang",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "firebase-admin": "^4.0.5"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-plugin-node": "^3.0.5"
+  }
+}
