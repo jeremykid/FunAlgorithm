@@ -25,12 +25,9 @@ def getAllListCombination(inputList, returnList, newItem):
     return returnList
 
 def main():
-    # inputList = input(":")
     inputList = ["1","2","3"]
     returnList = getAllStringCombination(inputList,[],"")
     print returnList
-    print inputList
     returnList = getAllListCombination(inputList, [],[])
     print returnList
-
 main()
