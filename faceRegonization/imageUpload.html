@@ -1,0 +1,55 @@
+
+<html>
+<body>
+
+<script type='text/javascript'>
+
+function main()
+{
+    var inputFileToLoad = document.createElement("input");
+    inputFileToLoad.type = "file";
+    inputFileToLoad.id = "inputFileToLoad";
+    document.body.appendChild(inputFileToLoad);
+
+    var buttonLoadFile = document.createElement("button");
+    buttonLoadFile.onclick = loadImageFileAsURL;
+    buttonLoadFile.textContent = "Load Selected File";
+    document.body.appendChild(buttonLoadFile);
+}
+
+function loadImageFileAsURL()
+{
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0)
+    {
+        var fileToLoad = filesSelected[0];
+        // console.log(fileToLoad);
+        if (fileToLoad.type.match("image.*"))
+        {
+            var fileReader = new FileReader();
+            fileReader.onload = function(fileLoadedEvent) 
+            {
+                var imageLoaded = document.createElement("img");
+                imageLoaded.src = fileLoadedEvent.target.result;
+                console.log(imageLoaded.src);
+
+                document.body.appendChild(imageLoaded);
+            };
+            fileReader.readAsDataURL(fileToLoad);
+            // var canvas = document.createElement("canvas");
+            // var ctx = canvas.getContext("2d");
+            // canvas.width = img.width;
+            // canvas.height = img.height;
+            // ctx.drawImage(img, 0, 0);
+            // var data = canvas.toDataURL(imageLoaded.src);
+            // console.log(data);
+        }
+    }
+}
+
+main();
+
+</script>
+
+</body>
+</html>
