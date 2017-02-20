@@ -36,11 +36,13 @@ def main():
 	answer_0 = a.index('a0')	
 	print ('use a.index(item) to find the index only for the first item')
 
-	#list.pop() return last item in the list and remove the last item
+	#list.pop() r
+	eturn last item in the list and remove the last item
 	print 'Before a.pop(), a = ', a
 	print 'a.pop() = ', a.pop()
 	print 'After a.pop(), a = ', a 
 
 	#Remove an item
-	
+	a.remove('a0')
+	print 'After remove(a0), a = ' a
 main()
