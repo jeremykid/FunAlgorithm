@@ -7,7 +7,7 @@ class linked_list():
     def set_head(self, head_node):
         self.head = head_node
 
-    def __len__(self):
+    def size(self):
         count = 0
         current = self.head
         while current:
@@ -40,13 +40,16 @@ class linked_list():
 
     # params: node value
     # return: int, index of the node value in the linked list
-    def value_at(self,node_value):
-        current = 0
+    def value_at(self,index):
+        count = 0
         current = self.head
-        while (current != node_value):
-            current += 1
+        while (count < index or current):
+            count += 1
             current = current.get_next()
-        return current
+        if current:
+            return current
+        else:
+            return "Out of Index"
     # params: node value 
     # return: bool true: exist that value in the linked list false: does not exist
     def exist(self, node_value):

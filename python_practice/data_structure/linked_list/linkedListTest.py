@@ -2,6 +2,7 @@ from LinkedList import linked_list
 from node import Node
 
 def testLinkedList():
+	print "test1 is a linked_list"
 	test1 = linked_list()
 	node0 = Node('a')
 	node1 = Node('b')
@@ -9,8 +10,14 @@ def testLinkedList():
 	node0.set_next(node1)
 	node1.set_next(node2)
 	test1.set_head(node0)
-	print (test1)
+	print "1. Print test1 = ",test1
+	print "2. size: test1.size() = ",test1.size()
+	print "3. empty: test1.empty() = ",test1.empty()
+	print "4.1 value_at: test1.value_at(0) = ",test1.value_at(0)
+	print "4.2 value_at: test1.value_at(2) = ",test1.value_at(2)
 	return 0
+
+
 
 def main():
 	testLinkedList()
