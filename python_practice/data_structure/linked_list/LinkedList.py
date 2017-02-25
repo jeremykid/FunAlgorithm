@@ -43,7 +43,7 @@ class linked_list():
     def value_at(self,index):
         count = 0
         current = self.head
-        while (count < index or current):
+        while (count < index and current):
             count += 1
             current = current.get_next()
         if current:
@@ -53,11 +53,11 @@ class linked_list():
     # params: node value 
     # return: bool true: exist that value in the linked list false: does not exist
     def exist(self, node_value):
-        result = false
+        result = False
         current = self.head
-        while (result == false and current):
-            if current.get_data == node_value:
-                result = true
+        while (result == False and current):
+            if current.get_data() == node_value:
+                result = True
             current = current.get_next()
         return result
 
@@ -93,10 +93,46 @@ class linked_list():
         return current
     # params: index of the item which need to be erase
     #
-    # def erase(self, index):
-    #     count = 0
-    #     current = self.head
-    #     while (count < index and current):
-    #         current = current.get_next()
-    #     if (count == index):
+    def erase(self, index):
+        count = 0
+        current = self.head
+        if (index == 0):
+            self.head = self.head.get_next()
+        else:
+            while (count < index-1 and current):
+                current = current.get_next()
+            if (count == index-1):
+                current.set_next(current.get_next().get_next())
+            else:
+                print "Index out of range"
 
+    def insert(self, index, node_value):
+        if (index == 0):
+            temp = self.head
+            self.head = node(node_value)
+            self.head.set_next(temp)
+        else:
+            count = 0
+            current = self.head
+            while (count == index-1 and current):
+                count += 1
+                current = current.get_next()
+
+            if (count == index-1):
+                temp_next = current.get_next()
+                temp = node(node_value)
+                current.set_next(temp)
+                temp.set_next(temp_next)
+            else:
+                print "index out of range"
+
+    def reverse(self):
+        current = self.head
+        temp_next = current.get_next()
+        current.set_next(None)
+        while temp_next.get_next():
+            temp_next.set_next(current)
+            current = temp_next
+            temp_next = current.get_next()
+        self.head = temp_next
+        return self

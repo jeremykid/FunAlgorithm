@@ -15,6 +15,9 @@ def testLinkedList():
 	print "3. empty: test1.empty() = ",test1.empty()
 	print "4.1 value_at: test1.value_at(0) = ",test1.value_at(0)
 	print "4.2 value_at: test1.value_at(2) = ",test1.value_at(2)
+	print "5.1 exist: test1.exist('a') = ", test1.exist('a')
+	print "5.2 exist: test1.exist('d') = ", test1.exist('d')
+	print "6 reverse: test1.reverse() = ",test1.reverse()
 	return 0
 
 
