@@ -18,6 +18,8 @@ def testLinkedList():
 	print "5.1 exist: test1.exist('a') = ", test1.exist('a')
 	print "5.2 exist: test1.exist('d') = ", test1.exist('d')
 	print "6 reverse: test1.reverse() = ",test1.reverse()
+	test1.remove_value('a')
+	print "7 remove_value: test1.remove_value('a')  result =", test1
 	return 0
 
 

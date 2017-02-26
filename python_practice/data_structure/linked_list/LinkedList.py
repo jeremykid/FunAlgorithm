@@ -126,13 +126,33 @@ class linked_list():
             else:
                 print "index out of range"
 
+    # a->b->c->end
     def reverse(self):
-        current = self.head
-        temp_next = current.get_next()
-        current.set_next(None)
+        current = self.head#a
+        temp_next = current.get_next()#b
+        current.set_next(None)#a->end
         while temp_next.get_next():
+            temp_node = temp_next.get_next()
             temp_next.set_next(current)
             current = temp_next
-            temp_next = current.get_next()
+            temp_next = temp_node
+            
+        temp_next.set_next(current)
         self.head = temp_next
         return self
+
+    def remove_value(self, value):
+        current =self.head
+        while (current.get_next() != value and current.get_next()):
+            current = current.get_next()
+
+        if (current.get_next() == value):
+            temp_next = current.get_next().get_next()
+            current.set_next(temp_next)
+            return 1
+        else:
+            return -1
+
+    def value_n_from_end(self, n):
+        linked_list_length = self.size()
+        return self.value_at(linked_list_length - n)
