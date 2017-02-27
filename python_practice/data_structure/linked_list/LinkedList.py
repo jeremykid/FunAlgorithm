@@ -130,6 +130,8 @@ class linked_list():
     def reverse(self):
         current = self.head#a
         temp_next = current.get_next()#b
+        if temp_next == None:
+            return self
         current.set_next(None)#a->end
         while temp_next.get_next():
             temp_node = temp_next.get_next()
@@ -143,6 +145,9 @@ class linked_list():
 
     def remove_value(self, value):
         current =self.head
+        if current == value:
+            self.head = current.get_next()
+            return 1
         while (current.get_next() != value and current.get_next()):
             current = current.get_next()
 
