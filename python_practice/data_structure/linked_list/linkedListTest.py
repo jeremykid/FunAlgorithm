@@ -20,6 +20,9 @@ def testLinkedList():
 	print "6 reverse: test1.reverse() = ",test1.reverse()
 	test1.remove_value('a')
 	print "7 remove_value: test1.remove_value('a')  result =", test1
+	print "8.1 value_n_from_end: test1.value_n_from_end(0)  result =", test1.value_n_from_end(0)
+	print "8.2 value_n_from_end: test1.value_n_from_end(2)  result =", test1.value_n_from_end(2)
+
 	return 0
 
 

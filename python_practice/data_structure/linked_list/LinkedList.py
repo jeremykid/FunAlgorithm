@@ -145,7 +145,7 @@ class linked_list():
 
     def remove_value(self, value):
         current =self.head
-        if current == value:
+        if current == value: #for the case the head need to be remove
             self.head = current.get_next()
             return 1
         while (current.get_next() != value and current.get_next()):
@@ -160,4 +160,4 @@ class linked_list():
 
     def value_n_from_end(self, n):
         linked_list_length = self.size()
-        return self.value_at(linked_list_length - n)
+        return self.value_at(linked_list_length - n - 1)
