@@ -18,7 +18,7 @@ class queue_linked_list():
             self.tail = tempNode
 
     def dequeue(self):
-        if (self.empty()):
+        if (self.empty() == False):
             tempHeadNext = self.head.get_next()
             result = self.head
             if (tempHeadNext == None):
@@ -33,7 +33,7 @@ class queue_linked_list():
             return False
         else:
             return True
-            
+
     def __str__(self):
         current = self.head
         output = ""
