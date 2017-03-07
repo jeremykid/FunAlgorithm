@@ -1,0 +1,2 @@
+class hash_table():
+	
