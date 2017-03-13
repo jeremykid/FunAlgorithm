@@ -49,3 +49,20 @@ class Photo extends React.Component {
     }
 }
 ```
+
+公式写法
+ES5
+```
+function functionName (){
+    
+}
+```
+
+ES6
+```
+var functionName => () {
+    
+}
+```
+
+赋值
