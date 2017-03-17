@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { connect } from "react-redux"
+import { getSchedule } from '../../actions/lifeCycleActions.js'
 
-
+@connect((store) => {
+  return {
+    lifeCycle: store.lifeCycle
+  };
+})
 class reactLifeCycle extends Component {
 	constructor(props) {
 	  super(props);
@@ -35,16 +41,23 @@ class reactLifeCycle extends Component {
 		console.log("nextState"+nextState)	
 	}
 	componentWillUnmount(){
-
+		console.log("will unmount")
 	}
 
 	forceUpdate(){
-		
+
+	}
+
+	testState(){
+		this.props.dispatch(goToNextState())
 	}
 
   render() {
     return (
+    	<div>
  		<div>React Login Component </div>
+        <button className="btn-sign" onClick={this.testState.bind(this)} >Test State</button>
+        </div>
     )
   }
 }
