@@ -18,3 +18,14 @@ class undirectedGraph(object):
 		self.adjacent_matrix[vertex1][vertex2]+=1
 		self.adjacent_matrix[vertex2][vertex1]+=1
 
+        def isTree(self):
+	   	return True
+
+	def depthFirstSeach(self, start_vertex, finded_vertexes):
+		for node in range(self.degrees):
+			if self.adjacent_matrix[start_vertex][node] != 0:
+				finded_vertexes.append(node)
+				finded_vertexes = self.depthFirstSeach(self, start_node, finded_vertexes)
+		return finded_vertexes
+	
+	
