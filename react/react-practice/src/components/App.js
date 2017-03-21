@@ -12,6 +12,7 @@ class App extends Component {
       <WechatLogin />
 			<Link to="/reactbasic/reactLifeCycle" > gotoLifeCycle </Link>
 
+			<Link to="/reactsmallapp/reactSelect" > react autocomplete </Link>
 
       </div>
     )

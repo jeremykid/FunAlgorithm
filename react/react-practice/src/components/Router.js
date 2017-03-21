@@ -5,7 +5,7 @@ import { Router, Route, Link, IndexRoute, hashHistory, browserHistory } from 're
 import App from "./App.js"
 import WechatLogin from "./react-wechat/WechatLogin.js"
 import reactLifeCycle from "./react-basic/reactLifeCycle.js"
-
+import reactSelect from "./react-small-app/reactSelect.js"
 
 class ReactRouter extends Component {
 
@@ -15,6 +15,7 @@ class ReactRouter extends Component {
 			<Route path='/' component={App} />
 			<Route path='/WechatLogin' component={WechatLogin} />
 			<Route path='/reactbasic/reactLifeCycle' component={reactLifeCycle} />
+			<Route path='/reactsmallapp/reactSelect' component={reactSelect} />
 			{/* 404 not fond page, make sure it stay at bottom */}
         	<Route path='*' component={NotFound} />
 			</Router>
