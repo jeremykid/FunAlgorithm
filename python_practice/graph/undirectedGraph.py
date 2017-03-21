@@ -7,4 +7,14 @@ class undirectedGraph(object):
 			self.adjacent_matrix.append([0]*degrees)
 
 	def __str__(self):
-		return self.adjacent_matrix
+		output = ""
+		for row in self.adjacent_matrix:
+			for item in row:
+				output += "|"+str(item)
+			output += "|\n"
+		return output
+
+	def addEdge(self, vertex1, vertex2):
+		self.adjacent_matrix[vertex1][vertex2]+=1
+		self.adjacent_matrix[vertex2][vertex1]+=1
+
