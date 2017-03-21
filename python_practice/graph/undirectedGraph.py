@@ -23,9 +23,18 @@ class undirectedGraph(object):
 
 	def depthFirstSeach(self, start_vertex, finded_vertexes):
 		for node in range(self.degrees):
-			if self.adjacent_matrix[start_vertex][node] != 0:
+			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
 				finded_vertexes = self.depthFirstSeach(self, start_node, finded_vertexes)
 		return finded_vertexes
 	
-	
+	def getAllEdges(self):
+		return []
+
+	def breathFirstSeach(self, start_vertex, finded_vertexes):
+		for node in range(self.degrees):
+			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
+				finded_vertexes.append(node)
+		for node in range(self.degrees):
+			finded_vertexes = self.breathFirstSeach(self, start_node, finded_vertexes)
+		
