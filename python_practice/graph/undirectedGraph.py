@@ -15,9 +15,9 @@ class undirectedGraph(object):
 			output += "|\n"
 		return output
 
-	def addEdge(self, vertex1, vertex2):
-		self.adjacent_matrix[vertex1][vertex2]+=1
-		self.adjacent_matrix[vertex2][vertex1]+=1
+	def addEdge(self, vertex1, vertex2, weight = 1):
+		self.adjacent_matrix[vertex1][vertex2] += weight
+		self.adjacent_matrix[vertex2][vertex1] += weight
 
         def isTree(self):
 	   	return True
@@ -44,11 +44,21 @@ class undirectedGraph(object):
 		for node in range(self.degrees):
 			finded_vertexes = self.breathFirstSeach(self, start_node, finded_vertexes)
 		
-	def Dijkstra(self, start, end):
+	def Dijkstra(self, start):
 		#with weight
 		distanceList = [math.inf]*self.degrees
 		distanceList[start] = 0
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0:
-						
-		return [];
+				distanceList[node] = distanceList[start] + self.adjacent_matrix[start_vertex][node]
+		new_start = distanceList.index(min(distanceList))	
+		
+		return distanceList ;
+
+	def DijkstraRecursion(self ,start ,distance_list ,min_distance_list):
+		if len(min_distance_list) == self.degrees:
+			return distance_list 
+		else:
+			min_distance_list.append(start)
+			self.DijkstraRecursion(start ,distance_list ,min_distance_list)
+		
