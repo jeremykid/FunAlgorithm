@@ -1,3 +1,4 @@
+import math
 
 class undirectedGraph(object):
 	def __init__(self, degrees):
@@ -43,4 +44,11 @@ class undirectedGraph(object):
 		for node in range(self.degrees):
 			finded_vertexes = self.breathFirstSeach(self, start_node, finded_vertexes)
 		
-	
+	def Dijkstra(self, start, end):
+		#with weight
+		distanceList = [math.inf]*self.degrees
+		distanceList[start] = 0
+		for node in range(self.degrees):
+			if self.adjacent_matrix[start_vertex][node] != 0:
+						
+		return [];
