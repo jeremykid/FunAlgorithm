@@ -52,13 +52,19 @@ class undirectedGraph(object):
 			if self.adjacent_matrix[start_vertex][node] != 0:
 				distanceList[node] = distanceList[start] + self.adjacent_matrix[start_vertex][node]
 		new_start = distanceList.index(min(distanceList))	
-		
-		return distanceList ;
+		self.DijkstraRecursion(new_start, distanceList, [start])	
+		return distanceList
 
 	def DijkstraRecursion(self ,start ,distance_list ,min_distance_list):
 		if len(min_distance_list) == self.degrees:
 			return distance_list 
 		else:
 			min_distance_list.append(start)
+			for node in range(self.degrees):
+				if self.adjacent_matrix[start][node] != 0:
+					new_distance = distance_list[start] + self.adjacent_matrix[start][node]
+					if new_distance <= distance_list[node]:
+						distance_list[node] = new_distance
 			self.DijkstraRecursion(start ,distance_list ,min_distance_list)
+		
 		
