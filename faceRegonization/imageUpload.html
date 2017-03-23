@@ -26,7 +26,8 @@ function main()
 }
 
 var sendFaceDetact = () => {
-    var sendData = new FormData($('#uploadForm')[0]);
+    console.log("")
+    var sendData = new FormData();
     sendData.append('api_key','Bn7swhGpvtzxS9uMWG-0CkacJY-_gt-4');
     sendData.append('api_secret','tNCF8Wd-xjtw-qyQn47yjZh8RzLkVBkU');
     sendData.append('return_attributes','gender,age,smiling,glass,headpose,facequality,blur');
