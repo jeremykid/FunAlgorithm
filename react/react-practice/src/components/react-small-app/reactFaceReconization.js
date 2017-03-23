@@ -21,13 +21,6 @@ class reactFaceReconization extends Component {
 	}
 
 	send(){
-	    // var sendData = {};
-	    // sendData.api_key ='Bn7swhGpvtzxS9uMWG-0CkacJY-_gt-4';
-	    // sendData.api_secret ='tNCF8Wd-xjtw-qyQn47yjZh8RzLkVBkU';
-	    // sendData.return_attributes = 'gender,age,smiling,glass,headpose,facequality,blur';
-	    // sendData.image_url = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQKimYbw85PQbu84-o0n9rIsctHhqWJ5ZCeQ8HQSj-gF8mhgM-cnewwg';
-	    // console.log(sendData);
-
 	    var sendData = new FormData();
 	    sendData.append('api_key','Bn7swhGpvtzxS9uMWG-0CkacJY-_gt-4');
 	    sendData.append('api_secret','tNCF8Wd-xjtw-qyQn47yjZh8RzLkVBkU');
