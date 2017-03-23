@@ -21,7 +21,7 @@ def main():
 	#    2->5
 	# 1->3
 	#    3->4
-	result = test1.depthFirstSearch(1)
+	result = test1.depthFirstSeach(1,[])
 	print "=== Depth First Search ==="
 	print result
 	
@@ -30,12 +30,12 @@ def main():
 	# 1->3
 	#    2->5
 	#    3->4
-	result = test1.breathFirstSearch(1)
+	result = test1.breathFirstSeach(1,[])
 	print "=== Breath First Search ==="
 	print result
 	
 	#todo test get all edges
-	result = test1.getAllEdges(1)
+	result = test1.getAllEdges()
 	print "=== Get All Edges ==="
 	print result
 	

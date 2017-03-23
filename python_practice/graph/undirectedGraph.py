@@ -26,7 +26,7 @@ class undirectedGraph(object):
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
-				finded_vertexes = self.depthFirstSeach(self, start_node, finded_vertexes)
+				finded_vertexes = self.depthFirstSeach(node, finded_vertexes)
 		return finded_vertexes
 	
 	def getAllEdges(self):
@@ -42,7 +42,8 @@ class undirectedGraph(object):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
 		for node in range(self.degrees):
-			finded_vertexes = self.breathFirstSeach(self, start_node, finded_vertexes)
+			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
+				finded_vertexes = self.breathFirstSeach(node, finded_vertexes)
 		
 	def Dijkstra(self, start):
 		#with weight
