@@ -31,6 +31,9 @@ class reactSelect extends Component {
 	constructor(props) {
 	  super(props);
 	  console.log("constructor")
+		this.state = {
+      		value:"",
+    	};
 	}  
 
 	componentWillMount(){
@@ -40,20 +43,21 @@ class reactSelect extends Component {
 	componentDidMount(){
 		console.log("did mount");
 	}
-	shouldComponentUpdate(nextProps, nextState){
-		
-	}
 
-	
+	onChange(value) {
+		this.setState({
+			value
+		})
+	}
 
   render() {
     return (
     	<div>
 			<Select
 				name="form-field-name"
-				value="one"
+				value={this.state.value}
 				options={options}
-				onChange={logChange}
+				onChange={this.onChange.bind(this)}
 			/>        
 		</div>
     )

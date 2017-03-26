@@ -25,7 +25,7 @@ export default function reducer(state={
                isFetched: false,
                error: action.payload 
         }
-        
+        }
     }
     return state
 }
