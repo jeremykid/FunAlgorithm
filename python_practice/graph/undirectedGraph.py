@@ -1,5 +1,6 @@
 import math
 
+
 class undirectedGraph(object):
 	def __init__(self, degrees):
 		self.degrees = degrees
@@ -20,15 +21,14 @@ class undirectedGraph(object):
 		self.adjacent_matrix[vertex2][vertex1] += weight
 
         def isTree(self):
+		#copy the adjacent matrix 
+		#let used edge = 0
+		for row in range(self.degrees):
+			for node in range(self.degrees):
+				#use depthFirstSeach to check if there are back
+				
 	   	return True
 
-	def depthFirstSeach(self, start_vertex, finded_vertexes):
-		for node in range(self.degrees):
-			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
-				finded_vertexes.append(node)
-				finded_vertexes = self.depthFirstSeach(node, finded_vertexes)
-		return finded_vertexes
-	
 	def getAllEdges(self):
 		result = []
 		for node_start in range(self.degrees):
@@ -37,13 +37,23 @@ class undirectedGraph(object):
 					result.append([node_start, node_end])
 		return result
 	
-	def breathFirstSeach(self, start_vertex, finded_vertexes):
+	def depthFirstSearch(self, start_vertex, finded_vertexes):
+		for node in range(self.degrees):
+			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
+				finded_vertexes.append(node)
+				finded_vertexes = self.depthFirstSeach(node, finded_vertexes)
+		return finded_vertexes
+	
+
+	
+	def breathFirstSearch(self, start_vertex, finded_vertexes):
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes = self.breathFirstSeach(node, finded_vertexes)
+		return finded_vertexes
 		
 	def Dijkstra(self, start):
 		#with weight

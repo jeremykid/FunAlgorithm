@@ -7,6 +7,8 @@ class reactFaceReconization extends Component {
 	constructor(props) {
 	  super(props);
 	  console.log("constructor")
+	  this.state = {file: '',imagePreviewUrl: ''};
+
 	}  
 
 	componentWillMount(){
@@ -19,7 +21,33 @@ class reactFaceReconization extends Component {
 	shouldComponentUpdate(nextProps, nextState){
 		
 	}
+	componentWillReceiveProps(nextProps){
+		//checkt if the image save to the firebase
+	}
+	
+	//reference http://codepen.io/hartzis/pen/VvNGZP
+	  _handleSubmit(e) {
+	    e.preventDefault();
+	    // TODO: do something with -> this.state.file
+	    console.log('handle uploading-', this.state.file);
+	  }
 
+	  _handleImageChange(e) {
+	    e.preventDefault();
+
+	    let reader = new FileReader();
+	    let file = e.target.files[0];
+
+	    reader.onloadend = () => {
+	      this.setState({
+		file: file,
+		imagePreviewUrl: reader.result
+	      });
+	    }
+
+	    reader.readAsDataURL(file)
+	  }
+	
 	send(){
 	    var sendData = new FormData();
 	    sendData.append('api_key','Bn7swhGpvtzxS9uMWG-0CkacJY-_gt-4');
@@ -46,12 +74,30 @@ class reactFaceReconization extends Component {
 	}
 	
 
-  render() {
-    return (
-    	<div>
- 		<div>React Login Component </div>
- 		 <button onClick={this.send.bind(this)} > </button>
-        </div>
+	render() {
+		let {imagePreviewUrl} = this.state;
+		let $imagePreview = null;
+		    if (imagePreviewUrl) {
+		      $imagePreview = (<img src={imagePreviewUrl} />);
+		    } else {
+		      $imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
+		    }
+    	return (
+		<div className="previewComponent">
+			<div>React Login Component </div>
+			 <button onClick={this.send.bind(this)} > </button>
+			<form onSubmit={(e)=>this._handleSubmit(e)}>
+			  <input className="fileInput" 
+			    type="file" 
+			    onChange={(e)=>this._handleImageChange(e)} />
+			  <button className="submitButton" 
+			    type="submit" 
+			    onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
+			</form>
+			<div className="imgPreview">
+			  {$imagePreview}
+			</div>
+		</div>
     )
   }
 }
