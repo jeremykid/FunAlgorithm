@@ -1,9 +1,9 @@
 module.exports = {
   	FIREBASE_CONFIG: {
-	    apiKey: "AIzaSyCR0Vdc2jVkhHdqq8Y5XzpqHkt7U3qCTFk",
-	    authDomain: "vipspa-4c43f.firebaseapp.com",
-	    databaseURL: "https://vipspa-4c43f.firebaseio.com",
-	    storageBucket: "vipspa-4c43f.appspot.com",
-	    messagingSenderId: "254523757213"
+	    apiKey: "AIzaSyD-qpHt-7JijEE92I8WlS_2BNErtk8haLk",
+	    authDomain: "weijiesun-f54db.firebaseapp.com",
+	    databaseURL: "https://weijiesun-f54db.firebaseio.com",
+	    storageBucket: "weijiesun-f54db.appspot.com",
+	    messagingSenderId: "184388731741"
 	  }
 };
