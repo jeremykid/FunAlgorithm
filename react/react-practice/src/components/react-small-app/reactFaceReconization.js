@@ -4,12 +4,28 @@ import { connect } from "react-redux"
 import $ from "jquery"
 //todo
 class reactFaceReconization extends Component {
-	constructor(props) {
-	  super(props);
-	  console.log("constructor")
-	  this.state = {file: '',imagePreviewUrl: ''};
+  constructor(props) {
+    super(props)
+    this.state = {file: '',imagePreviewUrl: ''}
+  }
+ 
+  upload(e) {
+    e.preventDefault()
+    console.log('temp file object '+this.state.file)
+  }
 
-	}  
+  imageChange(e) {
+    e.preventDefault()
+    let reader = new FileReader()
+    let file = e.target.files[0]
+    reader.onloadend = () => {
+      this.setState({
+        file: file,
+        imagePreviewUrl: reader.result
+      })
+    }
+    reader.readAsDataURL(file)
+  }
 
 	componentWillMount(){
 		console.log("will mount");
@@ -25,28 +41,7 @@ class reactFaceReconization extends Component {
 		//checkt if the image save to the firebase
 	}
 	
-	//reference http://codepen.io/hartzis/pen/VvNGZP
-	  _handleSubmit(e) {
-	    e.preventDefault();
-	    // TODO: do something with -> this.state.file
-	    console.log('handle uploading-', this.state.file);
-	  }
 
-	  _handleImageChange(e) {
-	    e.preventDefault();
-
-	    let reader = new FileReader();
-	    let file = e.target.files[0];
-
-	    reader.onloadend = () => {
-	      this.setState({
-		file: file,
-		imagePreviewUrl: reader.result
-	      });
-	    }
-
-	    reader.readAsDataURL(file)
-	  }
 	
 	send(){
 	    var sendData = new FormData();
