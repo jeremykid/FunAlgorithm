@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { connect } from "react-redux"
 import $ from "jquery"
+import FieldGroup from "../FieldGroup.js"
 //todo
 class reactFaceReconization extends Component {
   constructor(props) {
@@ -79,19 +80,28 @@ class reactFaceReconization extends Component {
 		    }
     	return (
 		<div className="previewComponent">
-			<div>React Login Component </div>
-			 <button onClick={this.send.bind(this)} > </button>
-			<form onSubmit={(e)=>this._handleSubmit(e)}>
-			  <input className="fileInput" 
-			    type="file" 
-			    onChange={(e)=>this._handleImageChange(e)} />
-			  <button className="submitButton" 
-			    type="submit" 
-			    onClick={(e)=>this._handleSubmit(e)}>Upload Image</button>
-			</form>
-			<div className="imgPreview">
-			  {$imagePreview}
-			</div>
+	        <form>
+	          <FieldGroup
+	            id="formControlsAvatar"
+	            type="file"
+	            label=""
+	            onChange={(e)=>this.imageChange(e)}
+	          />
+	          <ButtonToolbar>
+	            <Button type="submit" bsStyle="primary">
+	              Upload
+	            </Button>
+	            <Button 
+	              type="reset" 
+	              onClick={()=>this.setState({
+	                file: '',
+	                imagePreviewUrl: ''
+	              })}
+	              >
+	              Cancel
+	            </Button>
+	          </ButtonToolbar>
+	        </form>
 		</div>
     )
   }
