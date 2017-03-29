@@ -21,7 +21,7 @@ def main():
 	#    2->5
 	# 1->3
 	#    3->4
-	result = test1.depthFirstSeach(1,[])
+	result = test1.depthFirstSearch(1,[])
 	print "=== Depth First Search ==="
 	print result
 	
@@ -30,7 +30,7 @@ def main():
 	# 1->3
 	#    2->5
 	#    3->4
-	result = test1.breathFirstSeach(1,[])
+	result = test1.breathFirstSearch(1,[])
 	print "=== Breath First Search ==="
 	print result
 	
@@ -39,5 +39,8 @@ def main():
 	print "=== Get All Edges ==="
 	print result
 	
+	result = test1.Dijkstra(1)
+	print "=== Dijkstra ==="
+	print result
 	#todo test is tree (is it a cycle)
 main()

@@ -26,7 +26,7 @@ class undirectedGraph(object):
 		for row in range(self.degrees):
 			for node in range(self.degrees):
 				#use depthFirstSeach to check if there are back
-				
+				break
 	   	return True
 
 	def getAllEdges(self):
@@ -41,7 +41,7 @@ class undirectedGraph(object):
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
-				finded_vertexes = self.depthFirstSeach(node, finded_vertexes)
+				finded_vertexes = self.depthFirstSearch(node, finded_vertexes)
 		return finded_vertexes
 	
 
@@ -52,18 +52,14 @@ class undirectedGraph(object):
 				finded_vertexes.append(node)
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
-				finded_vertexes = self.breathFirstSeach(node, finded_vertexes)
+				finded_vertexes = self.breathFirstSearch(node, finded_vertexes)
 		return finded_vertexes
 		
 	def Dijkstra(self, start):
 		#with weight
-		distanceList = [math.inf]*self.degrees
+		distanceList = [float('inf')]*self.degrees
 		distanceList[start] = 0
-		for node in range(self.degrees):
-			if self.adjacent_matrix[start_vertex][node] != 0:
-				distanceList[node] = distanceList[start] + self.adjacent_matrix[start_vertex][node]
-		new_start = distanceList.index(min(distanceList))	
-		self.DijkstraRecursion(new_start, distanceList, [start])	
+		self.DijkstraRecursion(start, distanceList, [])	
 		return distanceList
 
 	def DijkstraRecursion(self ,start ,distance_list ,min_distance_list):
@@ -76,6 +72,7 @@ class undirectedGraph(object):
 					new_distance = distance_list[start] + self.adjacent_matrix[start][node]
 					if new_distance <= distance_list[node]:
 						distance_list[node] = new_distance
+			min_distance_list.append(start)
 			self.DijkstraRecursion(start ,distance_list ,min_distance_list)
 		
 		
