@@ -1,11 +1,12 @@
-import {firebaseApp,firebaseAuth,firebaseDb, firebaseStorage, firebaseAuthInstance } from '../components/Firebase.js'
+import {firebaseApp,firebaseAuth,firebaseDb, firebaseStorage, firebaseAuthInstance ,firebaseUploadState} from '../components/Firebase.js'
+import firebase from 'firebase';
 import { browserHistory } from 'react-router';
 
-export function uploadAvatar(imgFile, userId){
+export function uploadAvatar(imgFile){
     return function(dispatch) {
-    dispatch({type: "SEND_AVATAR"})
-    var uploadTask = firebaseStorage.child('User/' + userId + '/Avatar').put(imgFile)
-
+    dispatch({type: "SAVE_PICTURE"})
+    var uploadTask = firebaseStorage.child('User/').put(imgFile)
+    console.log("passed")
     // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebaseUploadState, // or 'state_changed'
       function(snapshot) {
@@ -22,10 +23,10 @@ export function uploadAvatar(imgFile, userId){
         }
       }, function(err) {
         console.log(err)
-        dispatch({type: "SEND_AVATAR_REJECTED", payload: err.code})
+        dispatch({type: "SAVE_PICTURE_REJECTED", payload: err.code})
     }, function() {
       // Upload completed successfully, now we can get the download URL
-      dispatch({type: "SEND_AVATAR_FULFILLED", payload: uploadTask.snapshot.downloadURL})
+      dispatch({type: "SAVE_PICTURE_FULFILLED", payload: uploadTask.snapshot.downloadURL})
       // var downloadURL =uploadTask.snapshot.downloadURL;
     });
   }

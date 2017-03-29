@@ -2,7 +2,7 @@ export default function reducer(state={
     error: null,
     fetching: false,
     isFetched: false,
-
+    url:"",
   }, action) {
 
     switch (action.type) {
@@ -14,9 +14,9 @@ export default function reducer(state={
         }
         case "SAVE_PICTURE_FULFILLED":{
             return {...state, 
-               fetching: true,
-               isFetched: false,
-               
+              fetching: true,
+              isFetched: false,
+              url: action.payload, 
             }
         }
         case "SAVE_PICTURE_REJECTED":{
