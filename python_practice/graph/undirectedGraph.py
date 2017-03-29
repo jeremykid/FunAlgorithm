@@ -72,7 +72,6 @@ class undirectedGraph(object):
 					new_distance = distance_list[start] + self.adjacent_matrix[start][node]
 					if new_distance <= distance_list[node]:
 						distance_list[node] = new_distance
-			min_distance_list.append(start)
 			self.DijkstraRecursion(start ,distance_list ,min_distance_list)
 		
 		
