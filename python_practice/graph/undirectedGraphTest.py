@@ -60,5 +60,27 @@ def main():
 	test2.addEdge(2,5)
 	test2.addEdge(4,5)
 	print "==== 2nd Graph with 7 edges ===="
-	print result
+	print test2
+	
+	test3 = undirectedGraph(6)
+	#0->1 2
+	#0->4 4
+	#1->2 5
+	#1->3 6
+	#3->5 2
+	#2->5 1
+	#4->5 7
+	test3.addEdge(0,1,2)
+	test3.addEdge(0,4,4)
+	test3.addEdge(1,2,5)
+	test3.addEdge(1,3,6)
+	test3.addEdge(3,5,2)
+	test3.addEdge(2,5,1)
+	test3.addEdge(4,5,7)
+	print "==== 3rd weight Graph with 7 edges ===="
+	print test3
+
+	print "==== 3rd weight Graph with get All Weight() ===="
+	result = test3.getAllWeight():
+
 main()
