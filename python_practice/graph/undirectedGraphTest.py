@@ -43,4 +43,22 @@ def main():
 	print "=== Dijkstra ==="
 	print result
 	#todo test is tree (is it a cycle)
+
+	test2 = undirectedGraph(6)
+	#0->1
+	#0->4
+	#1->2
+	#1->3
+	#3->5
+	#2->5
+	#4->5
+	test2.addEdge(0,1)
+	test2.addEdge(0,4)
+	test2.addEdge(1,2)
+	test2.addEdge(1,3)
+	test2.addEdge(3,5)
+	test2.addEdge(2,5)
+	test2.addEdge(4,5)
+	print "==== 2nd Graph with 7 edges ===="
+	print result
 main()
