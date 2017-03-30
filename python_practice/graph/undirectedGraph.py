@@ -40,6 +40,14 @@ class undirectedGraph(object):
 					result.append([node_start, node_end])
 		return result
 	
+	def getAllWeight(self):
+		allEdgeList = self.getAllEdges()
+		result = {}
+		for i in allEdgeList:
+			result[i] = self.adjacent_matrix[i[0],i[1]]
+		
+		return result
+		
 	def depthFirstSearch(self, start_vertex, finded_vertexes):
 		if (start_vertex >= self.degrees):
 			return "Index out of range"
@@ -89,4 +97,10 @@ class undirectedGraph(object):
 			min_distance_list[start] = 1
 			self.DijkstraRecursion(start ,distance_list ,min_distance_list)
 		
+	def minimum_spanning_tree(self):
+		result_adjacent_matrix = []
+		for i in range(self.degrees):
+			result_adjacent_matrix.append([0]*self.degrees)
 		
+			
+		return 0
