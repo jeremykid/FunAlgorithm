@@ -101,6 +101,14 @@ class undirectedGraph(object):
 		result_adjacent_matrix = []
 		for i in range(self.degrees):
 			result_adjacent_matrix.append([0]*self.degrees)
+		edges_weight = self.getAllWeight()
+		linked_vertexs = [0]*self.degrees
+		result_adjacent_matrix = self.minimum_spanning_tree_recursion(result_adjacent_matrix, edges_weight, linked_vertexs)
+		return result_adjacent_matrix
+
+	def minimum_spanning_tree_recursion(self, result_adjacent_matrix, edges_weight, linked_vertexs):
 		
-			
-		return 0
+		
+		return result_adjacent_matrix
+	
+	
