@@ -17,8 +17,11 @@ class undirectedGraph(object):
 		return output
 
 	def addEdge(self, vertex1, vertex2, weight = 1):
-		self.adjacent_matrix[vertex1][vertex2] += weight
-		self.adjacent_matrix[vertex2][vertex1] += weight
+		if (vertex1 >= self.degrees or vertex2 >= self.degrees):
+			print ("index out of range")
+		else:
+			self.adjacent_matrix[vertex1][vertex2] += weight
+			self.adjacent_matrix[vertex2][vertex1] += weight
 
         def isTree(self):
 		#copy the adjacent matrix 
@@ -38,6 +41,8 @@ class undirectedGraph(object):
 		return result
 	
 	def depthFirstSearch(self, start_vertex, finded_vertexes):
+		if (start_vertex >= self.degrees):
+			return "Index out of range"
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
@@ -47,6 +52,8 @@ class undirectedGraph(object):
 
 	
 	def breathFirstSearch(self, start_vertex, finded_vertexes):
+		if (start_vertex >= self.degrees):
+			return "Index out of range"
 		for node in range(self.degrees):
 			if self.adjacent_matrix[start_vertex][node] != 0 and node not in finded_vertexes:
 				finded_vertexes.append(node)
@@ -56,6 +63,8 @@ class undirectedGraph(object):
 		return finded_vertexes
 		
 	def Dijkstra(self, start):
+		if (start >= self.degrees):
+			return "Index out of range"
 		#with weight
 		distanceList = [float('inf')]*self.degrees
 		distanceList[start] = 0
