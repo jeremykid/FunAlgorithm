@@ -48,6 +48,19 @@ class undirectedGraph(object):
 		
 		return result
 		
+	def getOneMiniWeight(self, temp_adjacent_matrix = []):
+		if temp_adjacent_matrix == []:
+			temp_adjacent_matrix = self.adjacent_matrix
+		
+		min_weight = float('inf')
+		for row in range(self.degrees):
+			for col in range(self.degrees):
+				if (temp_adjacent_matrix[row][col] != 0 and temp_adjacent_matrix[row][col] < min_weight):
+					min_weight = temp_adjacent_matrix[row][col]
+					min_row = row
+					min_col = col
+		return [min_row, min_col, min_weight]
+	
 	def depthFirstSearch(self, start_vertex, finded_vertexes):
 		if (start_vertex >= self.degrees):
 			return "Index out of range"
