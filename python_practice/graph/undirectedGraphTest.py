@@ -80,7 +80,9 @@ def main():
 	print "==== 3rd weight Graph with 7 edges ===="
 	print test3
 
-	print "==== 3rd weight Graph with get All Weight() ===="
-	result = test3.getAllWeight():
+	print "==== 3rd weight Graph with get min Weight() ===="
+	result = test3.getOneMiniWeight()
+	print result
+	# result = test3.getAllWeight()
 
 main()

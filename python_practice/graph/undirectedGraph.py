@@ -40,13 +40,14 @@ class undirectedGraph(object):
 					result.append([node_start, node_end])
 		return result
 	
-	def getAllWeight(self):
-		allEdgeList = self.getAllEdges()
-		result = {}
-		for i in allEdgeList:
-			result[i] = self.adjacent_matrix[i[0],i[1]]
+	# def getAllWeight(self):
+	# 	allEdgeList = self.getAllEdges()
+	# 	result = {}
+	# 	for i in allEdgeList:
+	# 		print (self.adjacent_matrix[i[0]][i[1]])
+	# 		result[i] = self.adjacent_matrix[i[0]][i[1]]
 		
-		return result
+	# 	return result
 		
 	def getOneMiniWeight(self, temp_adjacent_matrix = []):
 		if temp_adjacent_matrix == []:
@@ -114,12 +115,12 @@ class undirectedGraph(object):
 		result_adjacent_matrix = []
 		for i in range(self.degrees):
 			result_adjacent_matrix.append([0]*self.degrees)
-		edges_weight = self.getAllWeight()
+		# edges_weight = self.getAllWeight()
 		linked_vertexs = [0]*self.degrees
-		result_adjacent_matrix = self.minimum_spanning_tree_recursion(result_adjacent_matrix, edges_weight, linked_vertexs)
+		result_adjacent_matrix = self.minimum_spanning_tree_recursion(result_adjacent_matrix, linked_vertexs)
 		return result_adjacent_matrix
 
-	def minimum_spanning_tree_recursion(self, result_adjacent_matrix, edges_weight, linked_vertexs):
+	def minimum_spanning_tree_recursion(self, result_adjacent_matrix, linked_vertexs):
 		
 		
 		return result_adjacent_matrix
