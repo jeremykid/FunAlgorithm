@@ -83,6 +83,13 @@ def main():
 	print "==== 3rd weight Graph with get min Weight() ===="
 	result = test3.getOneMiniWeight()
 	print result
-	# result = test3.getAllWeight()
-
+	
+	result_adjacent_matrix = []
+		for i in range(self.degrees):
+			result_adjacent_matrix.append([0]*6)
+	result = test3.minimum_spanning_tree(result_adjacent_matrix, linked_vertexs = [0]*self.degrees, test3.adjacent_matrix)
+	print result
+	
+	result = test3.minimum_spanning_tree_recursion()
+	print result
 main()
