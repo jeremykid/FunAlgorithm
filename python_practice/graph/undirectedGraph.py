@@ -129,7 +129,7 @@ class undirectedGraph(object):
 			if min_edge[2] = float("inf"):
 				return result_adjacent_matrix
 			
-			if linked_vertexs[min_edge[0]] <= 1 && linked_vertexs[min_edge[1]] <= 1: 
+			if linked_vertexs[min_edge[0]] <= 1 and linked_vertexs[min_edge[1]] <= 1: 
 				result_adjacent_matrix[min_edge[0]][min_edge[1]] = min_edge[2]
 				result_adjacent_matrix[min_edge[1]][min_edge[0]] = min_edge[2]
 				changed_adjacent_matrix[min_edge[0]][min_edge[1]] = 0
@@ -142,4 +142,6 @@ class undirectedGraph(object):
 				
 			self.minimum_spanning_tree_recursion(result_adjacent_matrix, linked_vertexs, changed_adjacent_matrix)
 	
-	
+	def travelling_salesman_problem(self):
+		#Asking
+		return 0
