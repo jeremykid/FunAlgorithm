@@ -117,12 +117,26 @@ class undirectedGraph(object):
 			result_adjacent_matrix.append([0]*self.degrees)
 		# edges_weight = self.getAllWeight()
 		linked_vertexs = [0]*self.degrees
-		result_adjacent_matrix = self.minimum_spanning_tree_recursion(result_adjacent_matrix, linked_vertexs)
+		changed_adjacent_matrix = [x[:] for x in self.adjacent_matrix]
+		result_adjacent_matrix = self.minimum_spanning_tree_recursion(result_adjacent_matrix, linked_vertexs, changed_adjacent_matrix)
 		return result_adjacent_matrix
 
-	def minimum_spanning_tree_recursion(self, result_adjacent_matrix, linked_vertexs):
-		
-		
-		return result_adjacent_matrix
+	def minimum_spanning_tree_recursion(self, result_adjacent_matrix, linked_vertexs, changed_adjacent_matrix):
+		if sum(linked_vertexs) == 2*self.degrees - 2:
+		    	return  result_adjacent_matrix
+		else: 
+			min_edge = self.getOneMiniWeight(changed_adjacent_matrix)
+			if linked_vertexs[min_edge[0]] <= 1 && linked_vertexs[min_edge[1]] <= 1: 
+				result_adjacent_matrix[min_edge[0]][min_edge[1]] = min_edge[2]
+				result_adjacent_matrix[min_edge[1]][min_edge[0]] = min_edge[2]
+				changed_adjacent_matrix[min_edge[0]][min_edge[1]] = 0
+				changed_adjacent_matrix[min_edge[1]][min_edge[0]] = 0
+				linked_vertexs[min_edge[0]] += 1
+				linked_vertexs[min_edge[1]] += 1
+			else:
+				changed_adjacent_matrix[min_edge[0]][min_edge[1]] = 0
+				changed_adjacent_matrix[min_edge[1]][min_edge[0]] = 0
+				
+			self.minimum_spanning_tree_recursion(result_adjacent_matrix, linked_vertexs, changed_adjacent_matrix)
 	
 	
