@@ -126,6 +126,9 @@ class undirectedGraph(object):
 		    	return  result_adjacent_matrix
 		else: 
 			min_edge = self.getOneMiniWeight(changed_adjacent_matrix)
+			if min_edge[2] = float("inf"):
+				return result_adjacent_matrix
+			
 			if linked_vertexs[min_edge[0]] <= 1 && linked_vertexs[min_edge[1]] <= 1: 
 				result_adjacent_matrix[min_edge[0]][min_edge[1]] = min_edge[2]
 				result_adjacent_matrix[min_edge[1]][min_edge[0]] = min_edge[2]
