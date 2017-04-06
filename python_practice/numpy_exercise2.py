@@ -8,3 +8,13 @@ print Matrix_A*Matrix_B
 print Matrix_A.dot(Matrix_B) 
 
 print np.dot(Matrix_A, Matrix_B)    
+
+Matrix_C = np.ones((2,3), dtype=int)
+Matrix_C *= 3
+
+print Matrix_C
+
+Matrix_D = np.ones((2,3), dtype=int)
+
+print Matrix_C+Matrix_D
+
