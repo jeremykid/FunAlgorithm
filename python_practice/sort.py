@@ -25,3 +25,15 @@ def insert_sort_single_sort(input_list, new_element):
     input_list.append(new_element)
   return input_list
 
+def merge_sort(input_list):
+  input_list_length = len(input_list)
+  if (input_list_length > 1):
+    mid = input_list_length//2
+    left_list = input_list[:mid]
+    right_list = input_list[mid:]
+    
+    left_list = merge_sort(left_list)
+    right_list = merge_sort(right_list)
+    
+    result_list = left_list + right_list
+  return result_list
