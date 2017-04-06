@@ -35,5 +35,19 @@ def merge_sort(input_list):
     left_list = merge_sort(left_list)
     right_list = merge_sort(right_list)
     
+    left_index = 0
+    right_index = 0
+    index = 0
+    
+    result_list = []
+    while left_index < len(left_list) and right_index < len(right_list):
+      if left_list[left_index] < right_list[right_index]:
+        result_list[index] = left_list[left_index]  
+        left_index = left_index+1
+      else:
+        result_list[index] = right_list[right_index]  
+        right_index = right_index+1
+      k++  
+        
     result_list = left_list + right_list
   return result_list
