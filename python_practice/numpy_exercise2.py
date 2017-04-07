@@ -18,3 +18,12 @@ Matrix_D = np.ones((2,3), dtype=int)
 
 print Matrix_C+Matrix_D
 
+Matrix_E = np.arange(12).reshape(3,4)
+
+print Matrix_E
+
+print Matrix_E[2,3]
+
+print Matrix_E[ : , 1]
+
+print Matrix_E[1 , : ]
