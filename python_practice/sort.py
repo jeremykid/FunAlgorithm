@@ -59,3 +59,23 @@ def merge_sort(input_list):
       right_index = right_index+1
       index += 1 
   return result_list
+
+def quick_sort(input_list):
+  input_list_length = len(input_list)
+  mark = input_list[0]
+  left_i = 1
+  right_i = input_list_length
+  while right_i > left_i:
+    if input_list[left_i] > mark:
+      if input_list[right_i] < mark:
+        input_list[left_i], input_list[right_i] = input_list[right_i], input_list[left_i]
+        left_i += 1
+        right_i -= 1
+      else:
+        right_i -= 1
+    else:
+      left_i += 1
+      
+  return input_list
+        
+  
