@@ -61,6 +61,9 @@ def merge_sort(input_list):
   return result_list
 
 def quick_sort(input_list):
+  return quick_sort_recursion(input_list)
+  
+def quick_sort_recursion(input_list):
   input_list_length = len(input_list)
   mark = input_list[0]
   left_i = 1
@@ -75,7 +78,7 @@ def quick_sort(input_list):
         right_i -= 1
     else:
       left_i += 1
-      
+  input_list = quick_sort_recursion[1:right_i] + [mark] + quick_sort_recursion[right_i+1:]
   return input_list
         
   
