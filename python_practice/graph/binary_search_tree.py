@@ -43,4 +43,22 @@ class binary_search_tree(object):
       return_left_height += self.left_node.get_height()
     return_height += max(return_right_height,return_left_height)
   
- 
+  def get_min(self):
+    if self.left_node == None:
+      return self.value
+    else:
+      return self.left_node.get_min()
+    
+  def get_max(self):
+    if self.right_node == None:
+      return self.value
+    else:
+      return self.right_node.get_max()
+    
+  def is_binary_search_tree(self):
+    #todo
+    return true
+  
+  def is_in_tree(self):
+    #todo
+    return true
