@@ -33,4 +33,14 @@ class binary_search_tree(object):
       return_count += self.left_node.get_node_count()
     return return_count
   
+  def get_height(self):
+    return_height = 1
+    return_right_height = 0
+    return_left_height = 0
+    if self.right_node != None:
+      return_right_height += self.right_node.get_height()
+    if self.left_node != None:
+      return_left_height += self.left_node.get_height()
+    return_height += max(return_right_height,return_left_height)
   
+ 
