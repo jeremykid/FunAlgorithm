@@ -18,6 +18,8 @@ class ReactRouter extends Component {
 			<Route path='/reactbasic/reactLifeCycle' component={reactLifeCycle} />
 			<Route path='/reactsmallapp/reactFaceReconization' component = {reactFaceReconization}/>
 			<Route path='/reactsmallapp/reactSelect' component={reactSelect} />
+			<Route path='/react-wechat/chat' component={WechatLogin} />
+
 			{/* 404 not fond page, make sure it stay at bottom */}
         	<Route path='*' component={NotFound} />
 			</Router>

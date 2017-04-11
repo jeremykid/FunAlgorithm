@@ -16,6 +16,8 @@ class App extends Component {
 
 			<Link to="/reactsmallapp/reactFaceReconization" > react Face Reconization </Link>
 
+      <Link to="/reactsmallapp/reactFaceReconization" > react Face Reconization </Link>
+
       </div>
     )
   }
