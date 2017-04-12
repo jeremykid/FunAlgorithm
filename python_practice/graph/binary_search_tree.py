@@ -56,8 +56,16 @@ class binary_search_tree(object):
       return self.right_node.get_max()
     
   def is_binary_search_tree(self):
-    #todo
-    return true
+    result = false
+    if self.left_node.value < self.left_node.get_max():
+      return result
+    else:
+      result = (result and self.left_node.is_binary_search_tree())
+    if self.right_node.value > self.right_node.get_min():
+      return result
+    else:
+      result = (result and self.left_node.is_binary_search_tree())
+    return result
   
   def is_in_tree(self):
     #todo
