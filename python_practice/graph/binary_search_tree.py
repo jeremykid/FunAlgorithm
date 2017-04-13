@@ -79,3 +79,19 @@ class binary_search_tree(object):
         return False
       else:
         return self.right_node.is_in_tree(val)
+      
+  def delete_value(self, val):
+    if self.value == val:
+#       if self.left_node.value != None and self.right_node.value == None:
+#         self.left_node = self.right
+    elif self.value > val:
+      if self.left_node == None:
+        return False
+      else:
+        return self.left_node.delete_value(val)
+    else:
+      if self.right_node == None:
+        return False
+      else:
+        return self.right_node.delete_value(val)
+      
