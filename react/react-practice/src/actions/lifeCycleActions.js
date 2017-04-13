@@ -6,3 +6,10 @@ export function goToNextState() {
 		dispatch({type: "GET_SCHEDULE"})
 	}
 }
+
+export function testPromise() {
+	let response = new Promise()
+	return function(dispatch) {
+		dispatch({type: "TEST_PROMISE"})
+	}
+}

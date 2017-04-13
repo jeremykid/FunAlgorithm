@@ -13,5 +13,13 @@ export default function reducer(state={
             }
         }
     }
+    switch (action.type) {
+        case "TEST_PROMISE":{
+            return {...state, 
+               fetching: true,
+               isFetched: false,
+            }
+        }
+    }
     return state
 }
