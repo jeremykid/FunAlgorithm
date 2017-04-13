@@ -8,7 +8,11 @@ export function goToNextState() {
 }
 
 export function testPromise() {
-	let response = new Promise()
+	let response = new Promise((resolve, reject) => {
+		function(dispatch) {
+			dispatch({type: "TEST_PROMISE"})
+		}
+	})
 	return function(dispatch) {
 		dispatch({type: "TEST_PROMISE"})
 	}
