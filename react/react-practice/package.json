@@ -55,7 +55,7 @@
     "redux": "^3.0.4",
     "redux-logger": "^2.7.4",
     "redux-promise-middleware": "^4.2.0",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.2.0"
   },
   "description": "Now you would like to read this brief but stupid instruction...",
   "repository": {

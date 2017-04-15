@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { connect,createStore, applyMiddleware } from "react-redux"
-import { getSchedule } from '../../actions/lifeCycleActions.js'
-import rootReducer from './reducers/index';
+import { getSchedule, testPromise } from '../../actions/lifeCycleActions.js'
 import thunk from 'redux-thunk';
-
+import rootReducer from '../../reducers'
 
 const store = createStore(
   rootReducer,
@@ -57,7 +56,9 @@ class reactLifeCycle extends Component {
 	}
 
 	testState(){
-		this.props.dispatch(goToNextState())
+		// this.props.dispatch(testPromise()).then(()=>{
+		// 	console.log("in then")
+		// })
 	}
 
   render() {

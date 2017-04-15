@@ -7,9 +7,34 @@ export function goToNextState() {
 	}
 }
 
+const update = (todoId, isDone) => (dispatch) =>
+  new Promise(function(resolve, reject) {
+    dispatch({
+      type: 'SET_SAVING',
+      saving: true
+    });
+    // Function is expected to return a promise
+    callUpdateApi(todoId, isDone).then(updatedTodo => {
+      dispatch({
+        type: 'SET_SAVING',
+        saving: false
+      });
+
+      resolve(updatedTodo);
+    }).catch(error => {
+      // TBD: Handle errors for Redux
+
+      reject(error);
+    })
+  });
+
 export function testPromise() {
-	let response = new Promise()
+
+	dispatch(update('todo-id', true)).then(updatedTodo => {
+	  showToast('Todo item was successfully updated');
+	});
 	return function(dispatch) {
-		dispatch({type: "TEST_PROMISE"})
+		dispatch({type: "GET_SCHEDULE"})
 	}
+
 }
