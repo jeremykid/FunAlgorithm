@@ -29,10 +29,6 @@ const update = (todoId, isDone) => (dispatch) =>
   });
 
 export function testPromise() {
-
-	dispatch(update('todo-id', true)).then(updatedTodo => {
-	  showToast('Todo item was successfully updated');
-	});
 	return function(dispatch) {
 		dispatch({type: "GET_SCHEDULE"})
 	}
