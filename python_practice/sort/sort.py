@@ -25,31 +25,6 @@ def insert_sort_single_sort(input_list, new_element):
     input_list.append(new_element)
   return input_list
 
-def msort(x):
-    result = []
-    if len(x) < 2:
-        return x
-    mid = int(len(x)/2)
-    y = msort(x[:mid])
-    z = msort(x[mid:])
-    while (len(y) > 0) or (len(z) > 0):
-        if len(y) > 0 and len(z) > 0:
-            if y[0] > z[0]:
-                result.append(z[0])
-                z.pop(0)
-            else:
-                result.append(y[0])
-                y.pop(0)
-        elif len(z) > 0:
-            for i in z:
-                result.append(i)
-                z.pop(0)
-        else:
-            for i in y:
-                result.append(i)
-                y.pop(0)
-    return result
-
 def merge_sort(input_list):
   input_list_length = len(input_list)
   result_list = input_list
@@ -109,4 +84,16 @@ def quick_sort_recursion(input_list):
   # input_list = quick_sort_recursion([1:right_i]) + [mark] + quick_sort_recursion([right_i+1:])
   # return input_list
         
-  
+def qsort(input_list):
+  input_list_length = len(input_list)
+  if input_list_length <= 1:
+    return input_list
+  mark = input_list[0]
+  less_list = []
+  more_list = []
+  for i in range(1, input_list_length):
+    if (input_list[i] > mark):
+      more_list.append(input_list[i])
+    else:
+      less_list.append(input_list[i])
+  return qsort(less_list) + [mark] + qsort(more_list)
