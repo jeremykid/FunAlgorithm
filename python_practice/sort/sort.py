@@ -59,32 +59,8 @@ def merge_sort(input_list):
       right_index = right_index+1
       index += 1 
   return result_list
-
-def quick_sort(input_list):
-  return quick_sort_recursion(input_list)
-  
-def quick_sort_recursion(input_list):
-  input_list_length = len(input_list)
-  mark = input_list[0]
-  left_i = 1
-  right_i = input_list_length-1
-  while right_i > left_i:
-    if input_list[left_i] > mark:
-      if input_list[right_i] < mark:
-        input_list[left_i], input_list[right_i] = input_list[right_i], input_list[left_i]
-        left_i += 1
-        right_i -= 1
-      else:
-        right_i -= 1
-    else:
-      left_i += 1
-  print right_i
-  print input_list[1:right_i]
-
-  # input_list = quick_sort_recursion([1:right_i]) + [mark] + quick_sort_recursion([right_i+1:])
-  # return input_list
         
-def qsort(input_list):
+def quick_sort(input_list):
   input_list_length = len(input_list)
   if input_list_length <= 1:
     return input_list
