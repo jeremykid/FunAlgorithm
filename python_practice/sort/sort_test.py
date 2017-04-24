@@ -8,7 +8,7 @@ def main():
   
   print merge_sort(test1_list)
   
-  print quick_sort(test1_list)
+  print qsort(test1_list)
   
   test2_list = [9,7,5,4,1]
   print bubble_sort(test2_list)
@@ -17,7 +17,7 @@ def main():
   
   print merge_sort(test2_list)
   
-  # print sort.quick_sort(test2_list)
+  print qsort(test2_list)
   
   test3_list = [11,15,86,2,4]
   print bubble_sort(test3_list)
@@ -26,5 +26,5 @@ def main():
   
   print merge_sort(test3_list)
   
-  # print sort.quick_sort(test3_list)
+  print qsort(test3_list)
 main()
