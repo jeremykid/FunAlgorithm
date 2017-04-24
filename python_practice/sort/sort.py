@@ -73,3 +73,17 @@ def quick_sort(input_list):
     else:
       less_list.append(input_list[i])
   return qsort(less_list) + [mark] + qsort(more_list)
+
+def selection_sort(input_list):
+    mark = 0
+    input_list_length = len(input_list)
+    for i in range(input_list_length):
+        min_value = input_list[mark]
+        for index in range(mark, input_list_length)    
+            if min_value >= input_list[index]:
+                input_list[mark] = input_list[index]
+                input_list[index] = min_value
+
+        mark += 1
+
+    return input_list
