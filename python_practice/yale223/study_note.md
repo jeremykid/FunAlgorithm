@@ -9,7 +9,7 @@ g++ -g3 -Wall -o helloworld helloworld.o
 
 6.4.1: Hello world.
 
-***cpp
+```cpp
 
 #include <iostream>
 
@@ -21,7 +21,7 @@ main(int argc, const char **argv)
     return 0;
 }
 
-***
+```
 
 6.4.2: References.
 
@@ -29,7 +29,7 @@ Call by Reference
 
 passing a pointer
 
-***cpp
+```cpp
 
 void increment(int *x)
 {
@@ -41,25 +41,25 @@ void increment(int &x)
     x++;
 }
 
-***
+```
 
 Call py Value
 
 passing a value
-***cpp
+```cpp
 
 void increment(int x)
 {
     x++;
 }
 
-***
+```
 
 6.4.3: Function overloading.
 
 functions with the same name but different argument types 
 
-***cpp
+```cpp
 
 #include <iostream>
 
@@ -93,7 +93,7 @@ main(int argc, const char **argv)
     return 0;
 }
 
-***
+```
 
 6.4.4 Classes.
 
