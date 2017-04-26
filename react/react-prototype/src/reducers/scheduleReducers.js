@@ -2,36 +2,7 @@ export default function reducer(state={
     error: null,
     fetching: false,
     isFetched: false,
-    schedule:{
-        mon: {
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        tue: {
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        wed: {
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        thu: {
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        fri:{
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        sat:{
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        },
-        sun:{
-          am:[1,2,3,4,5],
-          pm:[1,2,3,4,5]
-        }
-    }
+    
     
 
   }, action) {
