@@ -186,3 +186,23 @@ Need to be confirm
 ```cpp
     cout << (MaxPlus(2) + 3) << '\n';
 ```
+
+6.4.6 Templates
+
+ prefix a definition with template <class T> 
+
+```cpp
+template <class T>
+T add1(T x)
+{
+    return x + ((T) 1);
+}
+```
+
+```cpp
+    cout << "add1(3) == " << add1(3) << '\n'; //4
+    cout << "add1(3.1) == " << add1(3.1) << '\n'; //4.1
+    cout << "add1('c') == " << add1('c') << '\n'; //d
+    cout << "add1(MaxPlus(0)) == " << add1(MaxPlus(0)) << '\n'; // 1
+    cout << "add1(MaxPlus(2)) == " << add1(MaxPlus(2)) << '\n'; // 2
+```
