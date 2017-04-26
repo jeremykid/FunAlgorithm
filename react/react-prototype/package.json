@@ -1,0 +1,67 @@
+{
+  "name": "jet-laggers",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
+    "test:watch": "npm run test -- --watch",
+    "build": "webpack --progress --colors"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.5.0",
+    "eslint-plugin-react": "^6.7.1",
+    "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^1.2.0",
+    "react-addons-test-utils": "^15.4.1",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "babel-preset-stage-0": "^6.16.0",
+    "decorative-react": "^0.1.3",
+    "firebase": "^3.6.4",
+    "font-awesome": "^4.7.0",
+    "globalize": "^1.1.2",
+    "lodash": "^3.10.1",
+    "markdown": "^0.5.0",
+    "moment": "^2.17.1",
+    "react": "^15.4.1",
+    "react-big-calendar": "^0.11.1",
+    "react-bootstrap": "^0.30.7",
+    "react-bootstrap-table": "^2.10.2",
+    "react-dom": "^15.1.3",
+    "react-event-calendar": "^0.3.0",
+    "react-fontawesome": "^1.5.0",
+    "react-globalize": "^0.3.10",
+    "react-markdown-editor": "^0.4.0",
+    "react-modal": "^1.6.5",
+    "react-redux": "^4.0.0",
+    "react-router": "^2.8.1",
+    "redux": "^3.0.4",
+    "redux-logger": "^2.7.4",
+    "redux-promise-middleware": "^4.2.0",
+    "redux-thunk": "^2.1.0"
+  },
+  "description": "Now you would like to read this brief but stupid instruction...",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshdeng/vipspaBackend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joshdeng/vipspaBackend/issues"
+  },
+  "homepage": "https://github.com/joshdeng/vipspaBackend#readme"
+}
