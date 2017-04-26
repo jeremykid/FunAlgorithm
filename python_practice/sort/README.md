@@ -32,8 +32,8 @@ Worst case => O(n^2)
 
 [bubble_sort_image]: https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif
 [insertion_sort_image]: https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif
-[merge_sort_image]: https://en.wikipedia.org/wiki/Merge_sort#/media/File:Merge-sort-example-300px.gif
-[quick_sort_image]: https://en.wikipedia.org/wiki/File:Sorting_quicksort_anim.gif
+[merge_sort_image]: https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif
+[quick_sort_image]: https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif
 
 Reference:
 https://en.wikipedia.org/wiki/
