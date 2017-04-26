@@ -146,3 +146,43 @@ main(int argc, const char **argv)
 
 6.4.5 Operator overloading
 
+define operator for specific class
+
+```cpp
+#include <iostream>
+#include <algorithm> // for max
+
+using namespace std;
+
+class MaxPlus {
+	int value;
+public:
+	MaxPlus(int);
+	MaxPlus operator+(const MaxPlus &);
+    MaxPlus operator*(const MaxPlus &);
+    operator int();
+}
+
+MaxPlus::MaxPlus(int x) { value = x; }
+
+MaxPlus 
+MaxPlus::operator*(const MaxPlus &other)
+{
+    return MaxPlus(value + other.value);
+}
+
+MaxPlus::operator int() { return value; }
+
+int
+main(int argc, const char **argv)
+	cout << "2+3 == "<<(MaxPlus(2) + MaxPlus(3))<< '\n';
+	cout << "2*3 == "<<(MaxPlus(2) * MaxPlus(3))<< '\n';
+	return 0;
+}
+```
+
+Need to be confirm
+
+```cpp
+    cout << (MaxPlus(2) + 3) << '\n';
+```
