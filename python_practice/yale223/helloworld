@@ -1,5 +1,0 @@
-CPP=g++
-CPPFLAGS=-g3 -Wall
-
-helloworld: helloworld.o
-        $(CPP) $(CPPFLAGS) -o $@ $^
