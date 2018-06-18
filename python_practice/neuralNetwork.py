@@ -1,8 +1,15 @@
 import math
 import numpy as np
 
+'''
+Reference https://databoys.github.io/Feedforward/
+'''
+
 def sigmoid(x):
-  return 1 / (1 + math.exp(-x))
+    return 1 / (1 + math.exp(-x))
+
+def sigmoid_derivative(y)
+    return y * (1.0 - y)
 
 class NeuralNetwork:
     def __init__(self, x, y):
