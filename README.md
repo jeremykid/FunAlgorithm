@@ -11,3 +11,47 @@
 * [ ] - 用[keras](https://keras.io/)实现 [vgg16](https://www.kaggle.com/keras/vgg16/home) 
 
 ![](https://imgur.com/uLXrKxe.jpg)
+
+### Install Wiki.js
+
+  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+
+  sudo apt-get install -y nodejs
+
+Install MongoDB
+
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
+
+  echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
+
+  sudo apt-get update
+
+  sudo apt-get install -y mongodb-org
+
+Install Git
+
+  sudo apt-get install git-core
+
+Install Nginx
+
+  sudo apt-get update
+  sudo apt-get install nginx
+  sudo service nginx start
+
+Install Wiki.js
+
+  curl -sSo- https://wiki.js.org/install.sh | bash
+
+Setup configration of Wiki
+
+  node wiki configure 8585
+
+linked nginx 
+
+given permission to ./repo and ./data
+
+  sudo chomd -R 777 repo/
+
+  sudo chomd -R 777 data/
+
+  sudo service nginx restart
