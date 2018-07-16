@@ -55,3 +55,31 @@ given permission to ./repo and ./data
   sudo chomd -R 777 data/
 
   sudo service nginx restart
+
+
+## pandas Learning
+
+read csv into into DataFrame
+
+while loading a no header file.
+df = pd.read_csv('filePath', header=None); 
+
+
+'''python
+import pandas as pd
+import numpy as np
+
+df = pd.read_csv('./example.csv')
+'''
+
+#### DataFrame property
+
+data: numpy ndarray
+
+dtype: return data type
+
+index:
+
+column: 
+
+copy: 
