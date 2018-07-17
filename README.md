@@ -71,6 +71,11 @@ import numpy as np
 
 df = pd.read_csv('./example.csv')
 '''
+#### 学习可视化工具
+
+- matplotlib
+
+- plotly
 
 #### DataFrame property
 
