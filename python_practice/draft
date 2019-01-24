@@ -24,5 +24,22 @@
 
 
 
+How to use social login in Microsoft Graph
 
+Since the laravel/Socialite does not support Microsoft, we was doing a library by our self, then there are some problem in updating version 2.0 and scope.
+
+Currently we have quick fix try to use Microsoft-Graph provider follow the really nice answers from stackoverflow
+
+https://stackoverflow.com/questions/37929579/laravel-socialite-and-office365-invalidargumentexception-in-manager-php-line-90
+
+
+How to run jupyter in windows 10
+
+I was trying to install jupyter notebook in windows 10 environment. And I found several commands are different with OS system.
+
+jupyter notebook => python -m notebook
+
+pip install jupyter => python -m pip install jupyter
+
+pip install -U pip => python -m pip install -U pip 
 
