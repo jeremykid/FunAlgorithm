@@ -9,4 +9,4 @@ class Solution:
             n = 0-n
             x = 1/x
         
-        return x**(n%2)*myPow2(x*x, n//2)
+        return x**(n%2)*self.myPow2(x*x, n//2)
