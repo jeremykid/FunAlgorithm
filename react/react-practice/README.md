@@ -1,1 +1,0 @@
-Wechat react login tring
